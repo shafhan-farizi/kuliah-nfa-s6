@@ -1,0 +1,124 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-areas: 
+        "header header header"
+        "nav nav nav"
+        "asideLeft main asideRight"
+        "footer footer footer";
+    background-color: #f0ffff;
+}
+
+header {
+    height: 250px;
+    grid-area: header;
+    overflow: hidden;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+nav {
+    grid-area: nav;
+    background-color: #39c5bb;
+    padding: 15px 0;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+nav ul li a {
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 3px;
+}
+
+nav ul li a:hover {
+    color: #e0ffff;
+}
+
+aside.left, aside.right {
+    padding: 20px;
+    background-color: #e6fafa;
+    color: #008b8b;
+}
+
+aside.left {
+    grid-area: asideLeft;
+}
+
+aside.right {
+    grid-area: asideRight;
+}
+
+main {
+    grid-area: main;
+    padding: 40px;
+    background-color: white;
+    color: #333;
+    line-height: 1.6;
+}
+
+main h2 {
+    color: #39c5bb;
+    margin-bottom: 20px;
+}
+
+main p {
+    margin-bottom: 15px;
+}
+
+footer {
+    grid-area: footer;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 12px;
+}
+
+h3 {
+    border-bottom: 2px solid #39c5bb;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+}
+
+@media (max-width: 768px) {
+    body {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "header"
+            "nav"
+            "main"
+            "asideLeft"
+            "asideRight"
+            "footer";
+    }
+    
+    header {
+        height: 150px;
+    }
+}
