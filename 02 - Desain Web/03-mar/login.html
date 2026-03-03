@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #eee;
+        }
+        form {
+            /* height: 500px; */
+            margin-top: 1rem;
+            width: 100%;
+            max-width: 350px;
+            padding: 0.5rem 2rem 1rem;
+            background: white;
+            border-radius: 15px;
+        }
+        h3 {
+            font-size: 2rem;
+            font-weight: bold;
+            text-align: center;
+            color: #212529;
+        }
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            margin-bottom: 10px;
+        }
+        label {
+            font-size: 0.9rem;
+        }
+        input {
+            border-radius: 4px;
+            outline: none;
+            border: 1px solid #ddd;
+            padding: 0.8rem;
+        }
+        input:focus {
+            border: 1px solid #86b7fe;
+            box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+        }
+        button {
+            font-weight: bold;
+            padding: 0.8rem;
+            border-radius: 6px;
+            width: 100%;
+            cursor: pointer;
+            background-color: transparent;
+            color: black;
+            outline: none;
+            border: 1px solid #0d6efd;
+            transition: all .3s;
+        }
+        button:hover {
+            background-color: #0d6efd;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <h3>Login Page</h3>
+        <div class="input-group">
+            <label for="">Email</label>
+            <input type="email" placeholder="Masukkan email Anda">
+        </div>
+        <div class="input-group">
+            <label for="">Password</label>
+            <input type="password" placeholder="*********">
+        </div>
+        <button>Login</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Information</title>
+    <style>
+        body {
+            height: calc(100vh - 50px);
+            display: flex;
+            padding: 0.5rem;
+        }
+        p {
+            color: #0B2D72;
+        }
+        .image {
+            width: 100%;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            border: 8px solid transparent;
+        }
+        .paragraph {
+            padding-left: 1.5rem;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .label {
+            color: #888;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+        .value {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            border-left: 4px solid #0B2D72;
+            padding-left: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="image">
+        <img src="miku.jpg" alt="">
+    </div>
+    <div class="paragraph">
+        <div class="label">Nama Lengkap</div>
+        <div class="value">Shafhan Farizi</div>
+        <div class="label">Tempat, Tanggal Lahir</div>
+        <div class="value">Jakarta, 27 Agustus 2004</div>
+        <div class="label">Jenis Kelamin</div>
+        <div class="value">Pria</div>
+        <div class="label">Alamat</div>
+        <div class="value">RW.2, Duri Kosambi, Kecamatan Cengkareng, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11750</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kumpulan Gambar</title>
+    <style>
+        body {
+            height: calc(100vh - 40px);
+        }
+        marquee {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+        img {
+            margin-right: 0.8rem;
+            height: 100%;
+            width: 20%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <marquee behavior="sliding" direction="left" scrollamount="30" hspace="5%">
+        <img src="https://picsum.photos/200/301" alt="">
+        <img src="https://picsum.photos/201/300" alt="">
+        <img src="https://picsum.photos/201/301" alt="">
+        <img src="https://picsum.photos/201/302" alt="">
+        <img src="https://picsum.photos/202/301" alt="">
+    </marquee>
+</body>
+</html>

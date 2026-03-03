@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Data Table</title>
+		<link
+			rel="stylesheet"
+			href="https://cdn.datatables.net/2.3.7/css/dataTables.dataTables.css"
+		/>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+			integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
+		<script src="https://cdn.datatables.net/2.3.7/js/dataTables.js"></script>
+	</head>
+	<body>
+		<table
+			id="myTable"
+			class="display"
+			style="border-radius: 15px; overflow: hidden"
+		>
+			<thead style="background-color: #0b2d72; color: white">
+				<tr>
+					<th>#</th>
+					<th>Judul Lagu</th>
+					<th>Produser</th>
+					<th>Tahun Rilis</th>
+					<th>Genre</th>
+					<th>Status</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>1</td>
+					<td>Senbonzakura</td>
+					<td>WhiteFlame</td>
+					<td>2011</td>
+					<td>Rock/J-Pop</td>
+					<td><span class="badge badge-miku">Legendary</span></td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>Tell Your World</td>
+					<td>kz (livetune)</td>
+					<td>2012</td>
+					<td>EDM</td>
+					<td><span class="badge badge-miku">Legendary</span></td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>World is Mine</td>
+					<td>ryo (supercell)</td>
+					<td>2008</td>
+					<td>Pop</td>
+					<td><span class="badge badge-miku">Classic</span></td>
+				</tr>
+				<tr>
+					<td>4</td>
+					<td>The Disappearance of Hatsune Miku</td>
+					<td>cosMo@Bousou-P</td>
+					<td>2008</td>
+					<td>Speed/Nu-Metal</td>
+					<td><span class="badge badge-miku">Iconic</span></td>
+				</tr>
+				<tr>
+					<td>5</td>
+					<td>Ghost Rule</td>
+					<td>DECO*27</td>
+					<td>2016</td>
+					<td>Alternative Rock</td>
+					<td><span class="badge badge-miku">Popular</span></td>
+				</tr>
+			</tbody>
+		</table>
+		<script>
+			let table = new DataTable("#myTable", {
+				paging: false,
+				searching: false,
+			});
+		</script>
+	</body>
+</html>

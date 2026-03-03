@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>RWD Bootstrap</title>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+			crossorigin="anonymous"
+		/>
+        <style>
+            svg {
+                cursor: pointer;
+                transition: all .3s;
+            }
+            svg:hover {
+                transform: scale(1.2);
+            }
+            .carousel-inner {
+                height: 200px;
+            }
+            @media (min-width: 720px) {
+                .carousel-inner {
+                    height: 400px !important;
+                }
+
+                .iframe {
+                    height: 400px;
+                }
+            }
+        </style>
+	</head>
+	<body style="background-color: #F3F4F4;">
+		<div class="container d-flex flex-column bg-white" style="min-height: 100vh;">
+			<div class="row">
+				<div id="carouselExampleCaptions" class="carousel slide col-12 p-0">
+					<div class="carousel-indicators">
+						<button
+							type="button"
+							data-bs-target="#carouselExampleCaptions"
+							data-bs-slide-to="0"
+							class="active"
+							aria-current="true"
+							aria-label="Slide 1"
+						></button>
+						<button
+							type="button"
+							data-bs-target="#carouselExampleCaptions"
+							data-bs-slide-to="1"
+							aria-label="Slide 2"
+						></button>
+						<button
+							type="button"
+							data-bs-target="#carouselExampleCaptions"
+							data-bs-slide-to="2"
+							aria-label="Slide 3"
+						></button>
+					</div>
+					<div class="carousel-inner position-relative">
+						<div class="carousel-item active position-static">
+							<img
+								src="https://i.redd.it/0xbvcs68n7nf1.jpeg"
+								class="d-block w-100"
+								alt="gambar hatsune miku"
+							/>
+							<div
+								class="carousel-caption d-none d-md-block bg-black bg-opacity-50 rounded-2"
+							>
+								<h5>Miku Beam</h5>
+								<p>Miku versi beam.</p>
+							</div>
+						</div>
+						<div class="carousel-item position-static">
+							<img
+								src="https://www.lasallecentrouniversitario.es/wp-content/uploads/2018/11/hatsune-miku.jpg"
+								class="d-block w-100"
+								alt="gambar hatsune miku"
+							/>
+							<div
+								class="carousel-caption d-none d-md-block bg-black bg-opacity-50 rounded-2"
+							>
+								<h5>Miku Cyberpunk</h5>
+								<p>Miku versi Cyberpunk.</p>
+							</div>
+						</div>
+						<div class="carousel-item position-static">
+							<img
+								src="https://i.ebayimg.com/images/g/rTAAAOSwSCRdXbJJ/s-l1200.jpg"
+								class="d-block w-100"
+								alt="gambar hatsune miku chibi"
+							/>
+							<div
+								class="carousel-caption d-none d-md-block bg-black bg-opacity-50 rounded-2"
+							>
+								<h5>Miku Chibi</h5>
+								<p>Miku versi chibi.</p>
+							</div>
+						</div>
+					</div>
+					<button
+						class="carousel-control-prev"
+						type="button"
+						data-bs-target="#carouselExampleCaptions"
+						data-bs-slide="prev"
+					>
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Previous</span>
+					</button>
+					<button
+						class="carousel-control-next"
+						type="button"
+						data-bs-target="#carouselExampleCaptions"
+						data-bs-slide="next"
+					>
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Next</span>
+					</button>
+				</div>
+			</div>
+			<div class="row">
+				<nav class="navbar navbar-expand-lg bg-body-tertiary col-12" style="background-color: #D9EAFD !important;">
+					<div class="container-fluid">
+						<a class="navbar-brand" href="#">
+							<img src="./logo nfa.png" height="20" alt="" />
+						</a>
+						<button
+							class="navbar-toggler"
+							type="button"
+							data-bs-toggle="collapse"
+							data-bs-target="#navbarNavDropdown"
+							aria-controls="navbarNavDropdown"
+							aria-expanded="false"
+							aria-label="Toggle navigation"
+						>
+							<span class="navbar-toggler-icon"></span>
+						</button>
+						<div class="collapse navbar-collapse" id="navbarNavDropdown">
+							<ul class="navbar-nav">
+								<li class="nav-item">
+									<a
+										class="nav-link"
+										aria-current="page"
+										href="home.html"
+										target="content"
+										>Home</a
+									>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="study.html" target="content"
+										>MyStudy</a
+									>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="gallery.html" target="content"
+										>Gallery</a
+									>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="datatables.html" target="content"
+										>Datatable</a
+									>
+								</li>
+							</ul>
+						</div>
+						<a class="btn btn-primary ml-auto" href="login.html" target="content">Login</a>
+					</div>
+				</nav>
+			</div>
+			<div class="row p-4 flex-grow-1">
+				<div class="col-12 col-md-4">
+					<h3>Kunjungi Website Kami</h3>
+					<div class="list-group shadow-sm">
+						<a
+							href="https://nfacademy.id"
+							class="list-group-item list-group-item-action text-primary"
+							target="_blank"
+							>NF Academy</a
+						>
+						<a
+							href="https://nurulfikri.ac.id"
+							class="list-group-item list-group-item-action text-primary"
+							target="_blank"
+							>STT Terpadu Nurul Fikri</a
+						>
+						<a
+                        href="https://www.bimbelnurulfikri.id/"
+                        class="list-group-item list-group-item-action text-primary"
+                        >Bimbel Nurul Fikri</a
+						>
+						<a
+							href="https://digital.dompetdhuafa.org/zakat/maal"
+							class="list-group-item list-group-item-action text-primary"
+							>Zakat Maal</a
+						>
+						<a
+							href="https://zakatsukses.org/"
+							class="list-group-item list-group-item-action text-primary"
+							>Zakat Sukses</a
+						>
+					</div>
+				</div>
+				<iframe class="col-12 col-md-8 iframe" src="home.html" name="content"> </iframe>
+			</div>
+			<div class="row bg-primary text-white p-2">
+				<div class="col-md-12">
+					<footer class="d-flex justify-content-between">
+						<div>
+							<h3>Shafhan Farizi</h3>
+							<p>Penggemar animek yang hobi membuat website</p>
+						</div>
+						<div class="d-flex gap-2 align-self-center">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="20"
+								height="20"
+								fill="currentColor"
+								class="bi bi-facebook"
+								viewBox="0 0 16 16"
+							>
+								<path
+									d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"
+								/>
+							</svg>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="20"
+								height="20"
+								fill="currentColor"
+								class="bi bi-instagram"
+								viewBox="0 0 16 16"
+							>
+								<path
+									d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"
+								/>
+							</svg>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="20"
+								height="20"
+								fill="currentColor"
+								class="bi bi-whatsapp"
+								viewBox="0 0 16 16"
+							>
+								<path
+									d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"
+								/>
+							</svg>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="20"
+								height="20"
+								fill="currentColor"
+								class="bi bi-telegram"
+								viewBox="0 0 16 16"
+							>
+								<path
+									d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.287 5.906q-1.168.486-4.666 2.01-.567.225-.595.442c-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294q.39.01.868-.32 3.269-2.206 3.374-2.23c.05-.012.12-.026.166.016s.042.12.037.141c-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8 8 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629q.14.092.27.187c.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.4 1.4 0 0 0-.013-.315.34.34 0 0 0-.114-.217.53.53 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09"
+								/>
+							</svg>
+						</div>
+					</footer>
+				</div>
+			</div>
+		</div>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+			crossorigin="anonymous"
+		></script>
+	</body>
+</html>
