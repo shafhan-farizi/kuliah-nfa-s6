@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas JavaScript</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            max-width: 500px;
+            margin: 15rem auto;
+            background-color: #fefefe;
+        }
+
+        main {
+            background-color: #A0D585;
+            height: 500px;
+            padding: 1.5rem 2rem;
+            border-radius: 15px;
+            position: relative;
+        }
+        select {
+            margin-bottom: 0.5rem;
+            margin-top: 4rem;
+        }
+        label {
+            display: block;
+            margin-top: 0.5rem;
+            margin-bottom: 0.3rem;
+            font-size: 1.3rem;
+        }
+        input, select, button {
+            border-radius: 4px;
+            outline: none;
+            border: 2px solid #eee;
+            width: 100%;
+            height: 40px;
+            font-size: 1.2rem;
+        }
+        input:focus, select:focus {
+            box-shadow: 0 0 8px #000;
+        }
+        .hasil {
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            right: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+        }
+        button {
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+        #hasil {
+            width: 100%;
+            height: 50px;
+            border-radius: 8px;
+            text-align: center;
+            padding: 0.5rem;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <select name="fungsi" onchange="handleSelection(this.value)" id="">
+            <option selected disabled>-- Pilih Bangun Datar --</option>
+            <option value="persegi">Persegi</option>
+            <option value="persegi_panjang">Persegi Panjang</option>
+            <option value="segitiga">Segitiga</option>
+        </select>
+        <div class="input-field">
+            <!-- <div class="input-group">
+                <label>Panjang</label>
+                <input type="number">
+            </div>
+            <div class="input-group">
+                <label>Lebar</label>
+                <input type="number">
+            </div> -->
+        </div>
+        <button onclick="handleSum()">Hitung</button>
+        <div class="input-group hasil">
+            <label style="text-align: center;">Hasil</label>
+            <div id="hasil">0</div>
+        </div>
+    </main>
+
+    <script>
+        const inputField = document.querySelector('.input-field')
+        const divHasil = document.getElementById('hasil')
+        const selectShape = document.querySelector('select')
+
+        const config = {
+            persegi: ['Sisi'],
+            persegi_panjang: ['Panjang', 'Lebar'],
+            segitiga: ['Alas', 'Tinggi'],
+        }
+
+        // fungsi untuk mengambil nilai bangun datar yang dipilih dan menambahkan sejumlah label dan input sesuai bangun datar yang dipilih
+        function handleSelection(value) {
+            inputField.innerHTML = ''
+            if(!config[value]) return
+
+            config[value].forEach(labelName => {
+                const group = document.createElement('div')
+                group.classList.add('input-group')
+                group.innerHTML = `
+                    <label>${labelName}</label>
+                    <input type="number" class="input-val"></input>
+                `
+                inputField.append(group)
+            })
+        }
+        
+        // menyatukan semua fungsi di satu tempat dan mengambil semua nilai input
+        function handleSum() {
+            const shape = selectShape.value
+
+            const values = Array.from(document.querySelectorAll('.input-val')).map(input => parseFloat(input.value) || 0)
+        
+            let hasil = 0
+
+            switch(shape) {
+                case 'persegi':
+                    hasil = values[0] ** 2
+                    break;
+                case 'persegi_panjang':
+                    hasil = values[0] * values[1]
+                    break
+                case 'segitiga':
+                    hasil = (values[0] * values[1]) / 2 
+                    break
+            }
+
+            divHasil.textContent = hasil
+        }
+
+        // fungsi untuk menghitung luas persegi
+        function luasPersegi(sisi) {
+            return sisi*sisi
+        }
+
+        // fungsi untuk menghitung luas persegi panjang
+        function persegiPanjang(panjang, lebar) {
+            return panjang * lebar
+        }
+
+        // fungsi untuk menghitung luas segitiga
+        function segitiga(alas, tinggi) {
+            return (alas * tinggi) / 2
+        }
+    </script>
+</body>
+</html>
