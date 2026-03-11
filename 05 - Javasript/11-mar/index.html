@@ -71,21 +71,25 @@
         const jabatan = 'manager'
         const status = 'menikah'
 
+        let gapok = 0
+
         if(jabatan == 'manager') {
-            gaji = 15000000
+            gapok = 15000000
         }  else if(jabatan == 'asisten manager') {
-            gaji = 10000000
+            gapok = 10000000
         } else if(jabatan == 'staff') {
-            gaji = 5000000
+            gapok = 5000000
+        } else {
+            console.error('jabatan tidak ditemukan');
         }
 
-        const tunjangan_jabatan = (15/100) * gaji
-        const bpjs = (10/100) * gaji
-        const tunjangan_keluarga = (20/100) * gaji
+        const tunjangan_jabatan = (15/100) * gapok
+        const bpjs = (10/100) * gapok
+        const tunjangan_keluarga = (status == 'menikah') ?  (20/100) * gapok : 0 
 
-        gaji += tunjangan_jabatan + tunjangan_keluarga + bpjs
+        const totalGaji = gapok + tunjangan_jabatan + bpjs + tunjangan_keluarga
 
-        gajiEl.textContent = 'Rp.' + gaji.toLocaleString('id-ID')
+        gajiEl.textContent = 'Rp.' + totalGaji.toLocaleString('id-ID')
     </script>
 </body>
 </html>
