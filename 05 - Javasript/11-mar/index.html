@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Pegawai</title>
+    <style>
+        body {
+            max-width: 550px;
+            margin: 5rem auto;
+            background-color: #e3e3e3;
+        }
+        table {
+            background-color: antiquewhite;
+            border-collapse: collapse;
+            width: 100%;
+            height: 100%;
+        }
+        thead {
+            background-color: #343a40;
+            color: white;
+        }
+        tbody {
+            background-color: #ffffff;
+        }
+        tfoot {
+            background-color: #343a40;
+            color: white;
+        }
+        tr:hover {
+            background-color: #e9ecef;
+            color: black;
+        }
+        td, th {
+            border: 1px solid #ddd;
+        }
+        td, th {
+            padding: 0.5rem 2rem;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Nama Pegawai</th>
+                <th>Umur</th>
+                <th>Jabatan</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>dodi prayodi</td>
+                <td>25 tahun</td>
+                <td>Manager</td>
+                <td>menikah</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>Total Gaji</td>
+                <td colspan="3" id="gaji" align="right">0</td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <script>
+        const gajiEl = document.getElementById('gaji')
+
+        const jabatan = 'manager'
+        const status = 'menikah'
+
+        if(jabatan == 'manager') {
+            gaji = 15000000
+        }  else if(jabatan == 'asisten manager') {
+            gaji = 10000000
+        } else if(jabatan == 'staff') {
+            gaji = 5000000
+        }
+
+        const tunjangan_jabatan = (15/100) * gaji
+        const bpjs = (10/100) * gaji
+        const tunjangan_keluarga = (20/100) * gaji
+
+        gaji += tunjangan_jabatan + tunjangan_keluarga + bpjs
+
+        gajiEl.textContent = 'Rp.' + gaji.toLocaleString('id-ID')
+    </script>
+</body>
+</html>
