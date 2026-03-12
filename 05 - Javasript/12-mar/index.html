@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Toko Digi</title>
+		<style>
+            * {
+                box-sizing: border-box;padding: 0; margin: 0;
+            }
+			body {
+				max-width: 600px;
+				margin: 5rem auto;
+				background-color: #e3e3e3;
+				position: relative;
+			}
+			h1 {
+				text-align: center;
+			}
+			button {
+				display: block;
+				padding: 0.5rem 1rem;
+				margin-bottom: 0.5rem;
+				margin-left: auto;
+				cursor: pointer;
+				/* margin-left: auto; */
+			}
+			table {
+				background-color: antiquewhite;
+				border-collapse: collapse;
+				width: 100%;
+				height: 100%;
+			}
+			thead {
+				background-color: #343a40;
+				color: white;
+			}
+			tbody {
+				background-color: #ffffff;
+			}
+			tfoot {
+				background-color: #343a40;
+				color: white;
+			}
+			tr:hover {
+				background-color: #e9ecef;
+				color: black;
+			}
+			td,
+			th {
+				border: 1px solid #ddd;
+			}
+			td,
+			th {
+				padding: 0.5rem 2rem;
+			}
+
+			tr td:last-child {
+				color: red;
+				text-decoration: underline;
+				cursor: pointer;
+			}
+            .inputBox {
+                width: 100%;
+                background-color: white;
+                margin-top: 1.5rem;
+                padding: 0.5rem 1rem;
+                display: none;
+            }
+            .header {
+                display: flex;
+                justify-content: space-between;
+            }
+            .header span {
+                padding: 0.2rem 0.5rem;
+                background-color: #ddd;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                transition: all .3s;
+            }
+            .header span:hover {
+                background-color: red;
+                color: white;
+            }
+            h2 {
+                margin-bottom: 0.5rem;
+            }
+            label {
+                display: block;
+            }
+            input {
+                width: 350px;
+                padding: 0.5rem;
+                margin-bottom: 0.5rem;
+            }
+            .new-input button {
+                margin-left: 0;
+            }
+		</style>
+	</head>
+	<body>
+		<h1>Toko Digi</h1>
+		<button onclick="tampilkanInputTambahProduk()">Tambah Produk</button>
+		<table>
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Nama</th>
+					<th>Harga</th>
+					<th>Stok</th>
+					<th>Aksi</th>
+				</tr>
+			</thead>
+			<tbody id="tbody"></tbody>
+		</table>
+
+        <div class="inputBox">
+            <div class="header">
+                <h2>Masukkan Produk Baru</h2>
+                <span onclick="tutupInputTambahProduk()">X</span>
+            </div>
+            <div class="new-input">
+                <div class="input-group">
+                    <label>Nama</label>
+                    <input type="text" class="input-val" />
+                </div>
+                <div class="input-group">
+                    <label>Harga</label>
+                    <input type="number" class="input-val" />
+                </div>
+                <div class="input-group">
+                    <label>Stok</label>
+                    <input type="number" class="input-val" />
+                </div>
+                <button onclick="tambahProduk()">Tambah</button>
+            </div>
+        </div>
+
+		<script>
+			const tbody = document.getElementById("tbody");
+            const inputBox = document.querySelector('.inputBox')
+            const allInput = document.querySelectorAll('.input-val')
+
+			let produkToko = [
+				{ id: 1, nama: "Laptop", harga: 7000000, stok: 5 },
+				{ id: 2, nama: "Mouse", harga: 200000, stok: 10 },
+				{ id: 3, nama: "Keyboard", harga: 350000, stok: 7 },
+			];
+
+			function tampilkanProduk() {
+                tbody.innerHTML = produkToko.map(produk => `
+                        <tr>
+                            <td>${produk.id}</td>
+                            <td>${produk.nama}</td>
+                            <td>Rp.${produk.harga.toLocaleString("id-ID")}</td>
+                            <td align="center">${produk.stok}</td>
+                            <td align="center" onclick="hapusProduk(${produk.id})">hapus</td>
+                        </tr>
+                    `).join('');
+			}
+
+            // menampilkan kolom pengisian data baru
+            function tampilkanInputTambahProduk() {
+                inputBox.style.display = 'block'
+            }
+
+            // menutup kolom pengisian data baru
+            function tutupInputTambahProduk() {
+                inputBox.style.display = 'none'
+            }
+
+            function tambahProduk() {
+                if(!allInput[0].value || !allInput[1].value || !allInput[2].value) return alert('Data tidak lengkap!')
+
+                const maxId = produkToko.length > 0 ? Math.max(...produkToko.map(p => p.id)) : 0
+
+                const produkBaru = {
+                    id: maxId + 1,
+                    nama: allInput[0].value,
+                    harga: Number(allInput[1].value),
+                    stok: Number(allInput[2].value),
+                }
+
+                produkToko.push(produkBaru)
+
+                allInput.forEach(input => input.value = '')
+
+                tutupInputTambahProduk()
+                tampilkanProduk()
+            }
+
+            function hapusProduk(id) {
+                produkToko = produkToko.filter(produk => produk.id != id)
+                
+                tampilkanProduk()
+            }
+
+			tampilkanProduk();
+		</script>
+	</body>
+</html>
