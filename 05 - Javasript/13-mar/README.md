@@ -71,6 +71,9 @@ class Pelanggan {
     }
 }
 ```
+
+---
+
 ### 🚀 Penggunaan & Percobaan
 Berikut adalah langkah-langkah untuk menjalankan simulasi sistem:
 #### 1. Inisialisasi: Membuat objek sistem dan beberapa objek pelanggan
@@ -98,6 +101,8 @@ pelanggan2.sewaKendaraan("Yamaha R1M")
 // menampilkan semua pelanggan yang sedang menyewa
 sistemTransportasi.tampilkanPenyewaAktif()
 ```
+---
+
 ### 🧪 Hasil Percobaan (Output)
 Saat kode dijalankan, sistem akan memberikan log transaksi yang rapi dan memfilter daftar pelanggan sehingga hanya pelanggan "Ahmad Subejo" dan "Karbu Jeruk"* yang muncul dalam daftar penyewa aktif.
 ```

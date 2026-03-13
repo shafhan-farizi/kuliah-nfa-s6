@@ -1,51 +1,101 @@
-# 🏪 Pengelolaan Produk Toko
+# 🏪 Sistem Pengelolaan Produk Toko (Simple CRUD)
 
-Aplikasi manajemen inventaris sederhana yang memungkinkan pengguna untuk menambah dan menghapus data produk secara dinamis menggunakan JavaScript.
-
-  <img src="https://github.com/shafhan-farizi/kuliah-nfa-s6/blob/634f2d843c2a08174bfd2e1b613adccbad9a4ddb/05%20-%20Javasript/12-mar/images/1.png?raw=true" width="500" />
+Aplikasi manajemen inventaris sederhana berbasis JavaScript yang mengimplementasikan operasi dasar untuk mengelola data produk. Proyek ini mendemonstrasikan penggunaan metode array modern seperti `.map()`, `.filter()`, dan `.forEach()`.
 
 ---
 
-### 📖 Panduan Penggunaan
+### 🚀 Fitur Utama
 
-#### 🗑️ Cara Hapus Produk
-1. **Tentukan Produk** yang ingin dihapus dari daftar tabel.
-<p align="center">
-  <img src="https://github.com/shafhan-farizi/kuliah-nfa-s6/blob/634f2d843c2a08174bfd2e1b613adccbad9a4ddb/05%20-%20Javasript/12-mar/images/1.png?raw=true" width="500" />
-</p>
-
-2. **Klik tombol 'Hapus'** pada kolom aksi. Data akan langsung hilang dari tabel secara otomatis.
-<p align="center">
-  <img src="https://github.com/shafhan-farizi/kuliah-nfa-s6/blob/634f2d843c2a08174bfd2e1b613adccbad9a4ddb/05%20-%20Javasript/12-mar/images/2.png?raw=true" width="400" />
-  <img src="https://github.com/shafhan-farizi/kuliah-nfa-s6/blob/634f2d843c2a08174bfd2e1b613adccbad9a4ddb/05%20-%20Javasript/12-mar/images/3.png?raw=true" width="400" />
-</p>
+* **Tambah Produk Dinamis**: Menambahkan produk baru dengan perhitungan ID otomatis menggunakan `Math.max`.
+* **Hapus Produk**: Menghapus data spesifik berdasarkan ID produk.
+* **Visualisasi Data**: Menampilkan daftar stok dengan format mata uang Rupiah (`id-ID`).
+* **Keamanan ID**: Menggunakan logika *spread operator* untuk menjamin ID selalu unik meskipun data dihapus di tengah.
 
 ---
 
-#### ➕ Cara Tambah Produk
-1. **Buka Form Tambah**: Klik tombol hijau **'Tambah Produk'** di bagian atas.
-<p align="center">
-  <img src="https://github.com/shafhan-farizi/kuliah-nfa-s6/blob/634f2d843c2a08174bfd2e1b613adccbad9a4ddb/05%20-%20Javasript/12-mar/images/4.png?raw=true" width="500" />
-</p>
+### 📖 Dokumentasi Kode
 
-2. **Isi Data**: Masukkan Nama, Harga, dan Stok pada kotak input yang muncul tepat di bawah tabel.
-<p align="center">
-  <img src="https://github.com/shafhan-farizi/kuliah-nfa-s6/blob/634f2d843c2a08174bfd2e1b613adccbad9a4ddb/05%20-%20Javasript/12-mar/images/5.png?raw=true" width="400" />
-  <img src="https://github.com/shafhan-farizi/kuliah-nfa-s6/blob/634f2d843c2a08174bfd2e1b613adccbad9a4ddb/05%20-%20Javasript/12-mar/images/6.png?raw=true" width="400" />
-</p>
+#### 1. Struktur Data
+Data disimpan dalam sebuah *Array of Objects* yang merepresentasikan atribut produk:
+* `id`: Identitas unik (Number).
+* `nama`: Nama produk (String).
+* `harga`: Harga dalam satuan Rupiah (Number).
+* `stok`: Jumlah ketersediaan barang (Number).
 
-3. **Simpan**: Klik tombol **'Tambah'** untuk memasukkan data ke dalam sistem.
-<p align="center">
-  <img src="https://github.com/shafhan-farizi/kuliah-nfa-s6/blob/634f2d843c2a08174bfd2e1b613adccbad9a4ddb/05%20-%20Javasript/12-mar/images/7.png?raw=true" width="500" />
-</p>
+#### 2. Fungsi Utama
+
+| Fungsi | Deskripsi |
+| :--- | :--- |
+| `tambahProduk(n, h, s)` | Menghitung ID tertinggi, membuat objek baru, dan memasukkannya ke daftar. |
+| `hapusProduk(id)` | Menyaring (filter) array untuk membuang produk dengan ID tertentu. |
+| `tampilkanProduk()` | Melakukan iterasi dan mencetak daftar produk ke konsol dengan format rapi. |
 
 ---
 
-### 🛠️ Fitur Aplikasi
-* **Real-time CRUD**: Menambah dan menghapus data tanpa *reload* halaman.
-* **Format Mata Uang**: Harga otomatis menggunakan format Rupiah (`id-ID`).
-* **Responsive Table**: Tampilan tabel yang rapi di berbagai ukuran layar.
+### 💻 Kode Program
 
-### 💻 Teknologi
-* **HTML5** & **CSS3**
-* **Vanilla JavaScript** (ES6+)
+```javascript
+// daftar produk awal
+let produkToko = [
+	{ id: 1, nama: "Laptop", harga: 7000000, stok: 5 },
+	{ id: 2, nama: "Mouse", harga: 200000, stok: 10 },
+	{ id: 3, nama: "Keyboard", harga: 350000, stok: 7 },
+];
+
+// fungsi untuk memasukkan produk baru
+function tambahProduk(nama, harga, stok) {
+    const maxId = produkToko.length > 0 ? Math.max(...produkToko.map(p => p.id)) : 0
+
+    const produkBaru = {
+        id: maxId + 1,
+        nama,
+        harga,
+        stok
+    }
+
+    produkToko.push(produkBaru)
+    console.log(`[Baru] Produk ${produkBaru.nama} berhasil ditambahkan`);
+}
+
+// fungsi untuk menghapus produk berdasarkan id
+function hapusProduk(id) {
+    produkToko = produkToko.filter(p => p.id != id)
+    console.log(`[Dihapus] Produk dengan id ${id} berhasil dihapus`);
+}
+
+// fungsi untuk menampilkan seluruh produk yang tersedia
+function tampilkanProduk() {
+    console.log("\n=== Menampilkan Seluruh Produk yang Tersedia ===");
+    produkToko.forEach(p => {
+        console.log(`ID ${p.id}: Nama ${p.nama}, Harga Rp${Number(p.harga).toLocaleString('id-ID')}, Stok ${p.stok}`);
+    })
+}
+
+// === Simulasi Penggunaan ===
+tambahProduk("Kursi Gaming", 500000, 55);
+tambahProduk("NVIDIA GeForce RTX 5090", 55000000, 3);
+tambahProduk("PC Gaming Ryzen 5/7 (Fullset)", 7285000, 10);
+
+hapusProduk(1);
+hapusProduk(2);
+
+tampilkanProduk();
+```
+---
+
+### 🚀 Hasil Percobaan
+Berikut adalah hasil percobaannya dengan menggunakan perintah node
+```
+➜  12-mar git:(main) ✗ node index.js                                                                                                                                     
+[Baru] Produk Kursi Gaming berhasil ditambahkan
+[Baru] Produk NVIDIA GeForce RTX 5090 berhasil ditambahkan
+[Baru] Produk PC Gaming Ryzen 5/7 (Fullset) berhasil ditambahkan
+[Dihapus] Produk dengan id 1 berhasil dihapus
+[Dihapus] Produk dengan id 2 berhasil dihapus
+
+=== Menampilkan Seluruh Produk yang Tersedia ===
+ID 3: Nama Keyboard, harga Rp350.000, stok 7
+ID 4: Nama Kursi Gaming, harga Rp500.000, stok 55
+ID 5: Nama NVIDIA GeForce RTX 5090, harga Rp55.000.000, stok 3
+ID 6: Nama PC Gaming Ryzen 5/7 (Fullset), harga Rp7.285.000, stok 10
+```
