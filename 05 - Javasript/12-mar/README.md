@@ -26,7 +26,7 @@ Data disimpan dalam sebuah *Array of Objects* yang merepresentasikan atribut pro
 
 | Fungsi | Deskripsi |
 | :--- | :--- |
-| `tambahProduk(n, h, s)` | Menghitung ID tertinggi, membuat objek baru, dan memasukkannya ke daftar. |
+| `tambahProduk(nama, harga, stok)` | Menghitung ID tertinggi, membuat objek baru, dan memasukkannya ke daftar. |
 | `hapusProduk(id)` | Menyaring (filter) array untuk membuang produk dengan ID tertentu. |
 | `tampilkanProduk()` | Melakukan iterasi dan mencetak daftar produk ke konsol dengan format rapi. |
 
