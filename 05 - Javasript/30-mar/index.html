@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Tugas 5 JS</title>
+		<style>
+			form, .produk {
+				max-width: 500px;
+				margin: 5rem auto;
+				border: 1px solid #e3e3e3;
+				border-radius: 12px;
+				padding: 1.5rem;
+				box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+			}
+			h1 {
+				text-align: center;
+			}
+			label {
+				display: block;
+			}
+			input {
+				width: 90%;
+				padding: 5px;
+				margin-bottom: 0.5rem;
+			}
+			button {
+				display: block;
+				width: 50%;
+				margin: 1rem auto 0;
+				padding: 0.5rem 1.5rem;
+				cursor: pointer;
+			}
+            .produk-item {
+                border-bottom: 1px solid #ddd;
+                padding: 10px 0.5rem;
+                cursor: pointer;
+            }
+            .produk-item:hover {
+                background-color: #F63049;
+                color: white;
+            }
+		</style>
+	</head>
+	<body>
+        <form>
+            <h1>Tambah Produk</h1>
+            <label for="nama">Nama Barang</label>
+            <input type="text" id="nama" />
+            <label for="harga">Harga Barang</label>
+            <input type="number" id="harga" />
+            <button id="tombolTambah">Tambah +</button>
+        </form>
+        <div class="produk">
+            <h1>Daftar Produk</h1>
+            <div id="produkContainer"></div>
+        </div>
+	</body>
+
+	<script src="index.js"></script>
+</html>
