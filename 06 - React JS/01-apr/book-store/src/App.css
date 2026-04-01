@@ -1,0 +1,7 @@
+.truncate-overflow {
+  display: -webkit-box;
+  line-clamp: 3;
+  -webkit-line-clamp: 3; /* Potong setelah 3 baris */
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
+}
