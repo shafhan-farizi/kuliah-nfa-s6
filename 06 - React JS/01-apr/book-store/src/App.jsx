@@ -582,13 +582,11 @@ function App() {
 				</p>
 			</section>
 			<div className="row mt-5 mb-5">
-				<div className="col-6">
+				<div className="col-12 col-md-6">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
-						width="600"
-						height="400"
 						viewBox="0 0 799.468 552.327"
-						className="injected-svg"
+						className="injected-svg w-full h-auto"
 						xmlnsXlink="http://www.w3.org/1999/xlink"
 						role="img"
 						artist="Katerina Limpitsouni"
@@ -724,7 +722,7 @@ function App() {
 						</g>
 					</svg>
 				</div>
-				<div className="col-6">
+				<div className="col-12 mt-4 mt-md-0 col-md-6">
 					<div className="form-floating mb-3">
 						<input
 							type="text"
@@ -751,7 +749,7 @@ function App() {
 							id="floatingTextarea2"
 							style={{ height: "100px" }}
 						></textarea>
-						<label htmlFor="floatingTextarea2">Comments</label>
+						<label htmlFor="floatingTextarea2">Message</label>
 					</div>
 				</div>
 			</div>
