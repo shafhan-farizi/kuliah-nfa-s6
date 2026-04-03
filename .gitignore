@@ -1,1 +1,15 @@
-coba
+**/coba
+# Mengabaikan semua folder node_modules di level mana pun
+**/node_modules/
+
+# Mengabaikan folder hasil build (dist) di level mana pun
+**/dist/
+
+# Mengabaikan cache Vite
+.vite/
+**/.vite/
+
+# File sampah sistem & editor
+.vscode/
+.DS_Store
+Thumbs.db
