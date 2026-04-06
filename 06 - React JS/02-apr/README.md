@@ -1,7 +1,7 @@
 # 📚 BookStore V2
 Mengubah warna primary (biru) menjadi warna magenta 
 
-### Screenshot Per Halaman
+### Screenshot per Halaman
 
 1. **Home**
 <p>
