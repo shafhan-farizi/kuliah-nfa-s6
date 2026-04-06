@@ -1,5 +1,5 @@
 # 📚 BookStore V3
-Data buku diambil dari utils/bookList.js.  
+[UPDATE] Data buku diambil dari utils/bookList.js.  
 _*semua data diambil dari website [Gramedia](https://www.gramedia.com/)_
 
 ```javascript
