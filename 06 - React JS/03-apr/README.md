@@ -110,6 +110,7 @@ export default bookList;
 ```
 
 ### Screenshot Tampilan BookList yang Telah Diperbarui
+
 <p>
     <img src="https://github.com/shafhan-farizi/kuliah-nfa-s6/blob/8439f017f92fa4ab9f889b52f2da2185db8320cd/06%20-%20React%20JS/03-apr/images/tugas3react-1.png?raw=true" width="800"/>
 </p>
